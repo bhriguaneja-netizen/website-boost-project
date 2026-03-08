@@ -27,20 +27,13 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
-          : "bg-transparent border-b border-transparent"
+          : "bg-background/50 backdrop-blur-sm border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center h-20">
         <a href="/" className="flex items-center gap-3">
           <img src="/logo.svg" alt="XO Data Co." className="h-10" />
-          <span
-            className={`font-serif font-bold text-lg transition-colors duration-500 ${
-              scrolled ? "text-foreground" : ""
-            }`}
-            style={!scrolled ? { color: "hsl(0 0% 100%)" } : undefined}
-          >
-            XO DATA CO.
-          </span>
+          <span className="font-serif font-bold text-lg text-foreground">XO DATA CO.</span>
         </a>
 
         {/* Desktop */}
@@ -49,10 +42,7 @@ const Navbar = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`text-sm font-semibold transition-colors duration-300 hover:text-primary ${
-                  scrolled ? "text-muted-foreground" : ""
-                }`}
-                style={!scrolled ? { color: "hsl(0 0% 100% / 0.7)" } : undefined}
+                className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {link.label}
               </a>
@@ -71,8 +61,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden"
-          style={!scrolled ? { color: "hsl(0 0% 100%)" } : undefined}
+          className="md:hidden text-foreground"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg-light.jpg";
 
 const stats = [
   { value: 150, suffix: "+", label: "Projects Delivered" },
@@ -51,13 +51,8 @@ const Hero = () => {
     <header className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
       </div>
 
       {/* Animated particles */}
@@ -65,7 +60,7 @@ const Hero = () => {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full gradient-bg opacity-20"
+            className="absolute rounded-full gradient-bg opacity-15"
             style={{
               width: 4 + i * 3,
               height: 4 + i * 3,
@@ -75,7 +70,7 @@ const Hero = () => {
             animate={{
               y: [-20, 20, -20],
               x: [-10, 10, -10],
-              opacity: [0.1, 0.3, 0.1],
+              opacity: [0.08, 0.2, 0.08],
             }}
             transition={{
               duration: 4 + i,
@@ -93,14 +88,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-8"
-            style={{
-              borderColor: "hsl(160 84% 39% / 0.4)",
-              backgroundColor: "hsl(160 84% 39% / 0.1)",
-            }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8"
           >
             <span className="w-2 h-2 rounded-full gradient-bg animate-pulse" />
-            <span className="text-sm font-medium" style={{ color: "hsl(160 84% 80%)" }}>
+            <span className="text-sm font-medium text-primary">
               Data-Driven Transformation
             </span>
           </motion.div>
@@ -109,8 +100,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.05] mb-8"
-            style={{ color: "hsl(0 0% 100%)" }}
+            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.05] mb-8 text-foreground"
           >
             Shaping the{" "}
             <br className="hidden md:block" />
@@ -122,8 +112,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-lg md:text-xl max-w-xl leading-relaxed mb-10"
-            style={{ color: "hsl(0 0% 100% / 0.7)" }}
+            className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-muted-foreground"
           >
             We help leaders in business and society tackle their most important
             challenges and capture their greatest opportunities.
@@ -143,11 +132,7 @@ const Hero = () => {
             </a>
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base border transition-all duration-300 hover:bg-white/10"
-              style={{
-                color: "hsl(0 0% 100%)",
-                borderColor: "hsl(0 0% 100% / 0.2)",
-              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base border border-border text-foreground transition-all duration-300 hover:bg-secondary"
             >
               Explore Services
             </a>
@@ -159,17 +144,12 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x max-w-3xl"
-          style={{ borderColor: "hsl(0 0% 100% / 0.15)" }}
+          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-border max-w-3xl"
         >
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className="text-center md:px-8"
-              style={{ borderColor: "hsl(0 0% 100% / 0.15)" }}
-            >
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center md:px-8">
               <Counter target={stat.value} suffix={stat.suffix} />
-              <p className="mt-2 text-sm font-medium" style={{ color: "hsl(0 0% 100% / 0.5)" }}>
+              <p className="mt-2 text-sm font-medium text-muted-foreground">
                 {stat.label}
               </p>
             </div>
