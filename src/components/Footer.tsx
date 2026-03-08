@@ -21,27 +21,24 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="section-dark relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-      <div className="container mx-auto px-6 pt-20 pb-10 relative z-10">
+    <footer className="border-t border-border bg-background">
+      <div className="container mx-auto px-6 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img src="/logo.svg" alt="XO Data Co." className="h-10" />
-              <span className="font-serif font-bold text-xl" style={{ color: "hsl(0 0% 100%)" }}>
+              <span className="font-serif font-bold text-xl text-foreground">
                 XO DATA CO.
               </span>
             </div>
-            <p className="max-w-sm leading-relaxed mb-6" style={{ color: "hsl(0 0% 100% / 0.5)" }}>
+            <p className="max-w-sm leading-relaxed mb-6 text-muted-foreground">
               We help leaders in business and society tackle their most important challenges
               and capture their greatest opportunities through data-driven solutions.
             </p>
             <a
               href="mailto:contact@xodataco.com"
-              className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-              style={{ color: "hsl(160 84% 60%)" }}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
             >
               contact@xodataco.com
             </a>
@@ -50,10 +47,7 @@ const Footer = () => {
           {/* Link columns */}
           {footerLinks.map((col) => (
             <div key={col.title}>
-              <h4
-                className="text-sm font-bold uppercase tracking-widest mb-5"
-                style={{ color: "hsl(0 0% 100% / 0.4)" }}
-              >
+              <h4 className="text-sm font-bold uppercase tracking-widest mb-5 text-muted-foreground/60">
                 {col.title}
               </h4>
               <ul className="space-y-3">
@@ -61,8 +55,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm transition-colors hover:text-primary"
-                      style={{ color: "hsl(0 0% 100% / 0.6)" }}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
                       {link.label}
                     </a>
@@ -74,18 +67,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div
-          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: "1px solid hsl(0 0% 100% / 0.08)" }}
-        >
-          <p className="text-sm" style={{ color: "hsl(0 0% 100% / 0.35)" }}>
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground/60">
             &copy; 2026 XO Data Co. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm transition-colors hover:text-primary" style={{ color: "hsl(0 0% 100% / 0.35)" }}>
+            <a href="#" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm transition-colors hover:text-primary" style={{ color: "hsl(0 0% 100% / 0.35)" }}>
+            <a href="#" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
               Terms of Service
             </a>
           </div>
