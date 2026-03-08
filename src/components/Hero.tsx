@@ -112,7 +112,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-muted-foreground"
+            className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-foreground/70 font-medium"
           >
             We help leaders in business and society tackle their most important
             challenges and capture their greatest opportunities.
