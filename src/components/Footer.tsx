@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img src="/logo.svg" alt="XO Data Co." className="h-10" />
               <span className="font-sans font-bold text-xl tracking-wide text-foreground">
-                XO DATA CO.
+                XO Data Co.
               </span>
             </div>
             <p className="max-w-sm leading-relaxed mb-6 text-muted-foreground">

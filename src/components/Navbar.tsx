@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center h-20">
         <a href="/" className="flex items-center gap-3">
           <img src="/logo.svg" alt="XO Data Co." className="h-10" />
-          <span className="font-serif font-bold text-lg text-foreground">XO DATA CO.</span>
+          <span className="font-sans font-bold text-lg tracking-wide text-foreground">XO Data Co.</span>
         </a>
 
         {/* Desktop */}
