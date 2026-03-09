@@ -31,9 +31,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center h-20">
-        <a href="/" className="flex items-center gap-3">
-          <img src="/logo.svg" alt="XO Data Co." className="h-10" />
-          <span className="font-sans font-bold text-lg tracking-wide text-foreground">XO Data Co.</span>
+        <a href="/" className="flex items-center gap-2">
+          <img src="/logo.svg" alt="XO Data Co." className="h-7 w-7" />
+          <span className="text-[15px] font-semibold tracking-tight text-foreground">xo data co.</span>
         </a>
 
         {/* Desktop */}
