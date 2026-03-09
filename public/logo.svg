@@ -1,14 +1,10 @@
-<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:hsl(220, 96%, 44%);stop-opacity:1" />
       <stop offset="100%" style="stop-color:hsl(220, 80%, 56%);stop-opacity:1" />
     </linearGradient>
   </defs>
-  <g fill="url(#logoGrad)">
-    <!-- X -->
-    <path d="M 10 16 L 15 16 L 18 26 L 21 16 L 26 16 L 21 30 L 26 44 L 21 44 L 18 34 L 15 44 L 10 44 L 15 30 Z" />
-    <!-- O -->
-    <path d="M 40 16 A 14 14 0 1 0 40 44 A 14 14 0 1 0 40 16 Z M 40 21 A 9 9 0 1 1 40 39 A 9 9 0 1 1 40 21 Z" fill-rule="evenodd" />
-  </g>
+  <rect width="32" height="32" rx="8" fill="url(#logoGrad)" />
+  <text x="16" y="22" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="16" fill="white" letter-spacing="-0.5">xo</text>
 </svg>

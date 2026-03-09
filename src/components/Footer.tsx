@@ -26,10 +26,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.svg" alt="XO Data Co." className="h-10" />
-              <span className="font-sans font-bold text-xl tracking-wide text-foreground">
-                XO Data Co.
+            <div className="flex items-center gap-2 mb-6">
+              <img src="/logo.svg" alt="XO Data Co." className="h-7 w-7" />
+              <span className="text-base font-semibold tracking-tight text-foreground">
+                xo data co.
               </span>
             </div>
             <p className="max-w-sm leading-relaxed mb-6 text-muted-foreground">
