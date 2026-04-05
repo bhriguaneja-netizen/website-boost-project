@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   {
@@ -14,6 +15,7 @@ const footerLinks = [
     links: [
       { label: "Our Approach", href: "#process" },
       { label: "Insights", href: "#insights" },
+      { label: "Schedule Call", href: "https://calendly.com/xodataco" },
       { label: "Contact", href: "#contact" },
     ],
   },
@@ -36,12 +38,6 @@ const Footer = () => {
               We help leaders in business and society tackle their most important challenges
               and capture their greatest opportunities through data-driven solutions.
             </p>
-            <a
-              href="mailto:contact@xodataco.com"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
-            >
-              contact@xodataco.com
-            </a>
           </div>
 
           {/* Link columns */}
@@ -72,12 +68,12 @@ const Footer = () => {
             &copy; 2026 XO Data Co. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
+            <Link to="/privacy" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
+            </Link>
+            <Link to="/terms" className="text-sm text-muted-foreground/60 transition-colors hover:text-primary">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

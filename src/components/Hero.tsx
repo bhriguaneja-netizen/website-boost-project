@@ -102,7 +102,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.05] mb-8 text-foreground"
           >
-            Shaping the{" "}
+            Orchestrating the{" "}
             <br className="hidden md:block" />
             Future{" "}
             <span className="gradient-text">with Data.</span>
@@ -114,8 +114,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-foreground/70 font-medium"
           >
-            We help leaders in business and society tackle their most important
-            challenges and capture their greatest opportunities.
+            We empower business and social leaders to navigate their most complex 
+            challenges and seize high-impact opportunities through data-driven precision.
           </motion.p>
 
           <motion.div
@@ -125,16 +125,18 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#contact"
+              href="https://calendly.com/xodataco"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-primary-foreground font-semibold text-base hover:opacity-90 transition-all duration-300 hero-glow"
             >
-              Get Started <ArrowRight size={18} />
+              Book Strategy Call <ArrowRight size={18} />
             </a>
             <a
-              href="#services"
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base border border-border text-foreground transition-all duration-300 hover:bg-secondary"
             >
-              Explore Services
+              Message Us
             </a>
           </motion.div>
         </div>

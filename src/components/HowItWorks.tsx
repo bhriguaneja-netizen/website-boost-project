@@ -28,7 +28,12 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="process" className="relative py-28 overflow-hidden">
+    <section id="process" className="relative py-28 overflow-hidden bg-background">
+      {/* Decorative Logo Background Element */}
+      <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03] pointer-events-none select-none hidden lg:block">
+        <img src="/modern-logo-design/logo-modern.svg" alt="" className="w-full h-full animate-slow-spin" />
+      </div>
+
       {/* Split background: image on right */}
       <div className="absolute inset-0 hidden lg:block">
         <div className="absolute right-0 top-0 bottom-0 w-1/2">

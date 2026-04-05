@@ -8,9 +8,36 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || result.error?.message || "Failed to send message.");
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setError(err.message || "Something went wrong. Please try again or book a call directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,11 +108,19 @@ const Contact = () => {
                   className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-none"
                 />
               </div>
+              
+              {error && (
+                <p className="text-destructive text-sm mb-4 font-medium text-center">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-primary-foreground font-semibold text-base hover:opacity-90 transition-all duration-300 hero-glow"
+                disabled={isSubmitting}
+                className={`w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-primary-foreground font-semibold text-base transition-all duration-300 hero-glow ${
+                  isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:opacity-90"
+                }`}
               >
-                Send Message <Send size={16} />
+                {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} />
               </button>
             </motion.form>
           ) : (

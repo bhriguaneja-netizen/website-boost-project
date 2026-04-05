@@ -7,23 +7,23 @@ import serviceAi from "@/assets/service-ai.jpg";
 const services = [
   {
     icon: BarChart3,
-    title: "Data Analytics & BI",
+    title: "Strategic Data Governance",
     description:
-      "We turn complex data into clear, actionable insights. Our Business Intelligence solutions provide a comprehensive view of your operations, enabling smarter, faster decision-making.",
+      "We architect robust data frameworks that ensure integrity, security, and accessibility. Our governance strategies turn raw information into a high-trust corporate asset.",
     image: serviceAnalytics,
   },
   {
     icon: Code2,
-    title: "Custom App Development",
+    title: "Bespoke Digital Ecosystems",
     description:
-      "From enterprise platforms to customer-facing mobile apps, we engineer bespoke software solutions that drive efficiency, engagement, and growth.",
+      "We engineer custom enterprise platforms and cross-platform applications that bridge operational gaps and automate complex business workflows at scale.",
     image: serviceDev,
   },
   {
     icon: Brain,
-    title: "AI & LLM Integration",
+    title: "Agentic AI & Autonomous Systems",
     description:
-      "We leverage cutting-edge AI and Large Language Models to build intelligent systems and Model Context Platforms for AI LLM integrations that automate processes and unlock new capabilities.",
+      "We architect advanced Agentic AI frameworks and Model Context Protocols (MCP) that go beyond simple chat. We build autonomous agents that reason, plan, and execute complex business logic with human-level precision.",
     image: serviceAi,
   },
 ];

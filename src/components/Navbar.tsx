@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -31,10 +32,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center h-20">
-        <a href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src="/logo.svg" alt="XO Data Co." className="h-7 w-7" />
           <span className="text-[15px] font-semibold tracking-tight text-foreground">data co.</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8">
@@ -50,10 +51,12 @@ const Navbar = () => {
           ))}
           <li>
             <a
-              href="#contact"
+              href="https://calendly.com/xodataco"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-semibold px-5 py-2.5 rounded-lg gradient-bg text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              Get Started
+              Book a Call
             </a>
           </li>
         </ul>
@@ -92,11 +95,13 @@ const Navbar = () => {
               ))}
               <li>
                 <a
-                  href="#contact"
+                  href="https://calendly.com/xodataco"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg gradient-bg text-primary-foreground font-semibold"
                 >
-                  Get Started
+                  Book a Call
                 </a>
               </li>
             </ul>

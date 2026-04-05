@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Gauge, Users, Truck, ArrowRight } from "lucide-react";
+import { ShieldCheck, Gauge, Users, Brain, ArrowRight } from "lucide-react";
 
 const insights = [
   {
-    icon: ShieldCheck,
-    title: "AI-Powered Fraud Detection",
-    description: "How to move from reactive to predictive fraud prevention.",
-    tag: "Security",
+    icon: Brain,
+    title: "Mastering Agentic Workflows",
+    description: "How to move from prompt engineering to fully autonomous AI agents.",
+    tag: "Agentic AI",
   },
   {
     icon: Gauge,
-    title: "The Future of Maintenance",
-    description: "Unlocking operational efficiency with predictive analytics.",
-    tag: "Operations",
+    title: "The Power of RAG",
+    description: "Unlocking enterprise-specific insights with Retrieval-Augmented Generation.",
+    tag: "Advanced LLM",
+  },
+  {
+    icon: ShieldCheck,
+    title: "AI Security & Guardrails",
+    description: "Implementing safety protocols for mission-critical AI integrations.",
+    tag: "Governance",
   },
   {
     icon: Users,
-    title: "Hyper-Personalization at Scale",
-    description: "Using AI to understand and serve individual customer needs.",
-    tag: "Marketing",
-  },
-  {
-    icon: Truck,
-    title: "Resilient Supply Chains",
-    description: "Building an intelligent, agile, and predictive supply network.",
-    tag: "Logistics",
+    title: "Multi-Modal Business Apps",
+    description: "Building systems that process text, image, and voice for real impact.",
+    tag: "Innovation",
   },
 ];
 

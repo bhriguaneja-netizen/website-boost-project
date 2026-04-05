@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Blueprint | UniUni Logistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #0066FF;
+            --brand-dark: #050505;
+            --brand-card: #0F1115;
+            --text-white: #F5F5F7;
+            --text-muted: #A1A1A6;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--brand-dark) !important;
+            color: var(--text-white) !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-scheme: dark;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            background-color: var(--brand-dark) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @media print {
+            html, body { height: 17in; width: 11in; background-color: var(--brand-dark) !important; overflow: hidden; }
+            .container { height: 100%; padding: 40px 60px !important; background-color: var(--brand-dark) !important; }
+            @page { size: tabloid portrait; margin: 0; }
+        }
+
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; font-weight: 900; }
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #00C2FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header { margin-bottom: 40px; }
+        .logo-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
+        .logo-box { background: var(--brand-blue); color: white; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 20px; }
+        .confidential-tag { border: 1px solid var(--border); padding: 6px 16px; border-radius: 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; background: rgba(255,255,255,0.05); }
+
+        .main-title { font-size: 58px; line-height: 1.05; margin-bottom: 25px; letter-spacing: -2px; }
+        .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 1px solid var(--border); padding-top: 15px; }
+        .meta-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .meta-value { font-size: 18px; font-weight: 500; }
+
+        .section { margin-bottom: 45px; }
+        .section-header { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
+        .section-num { color: var(--brand-blue); font-size: 24px; font-weight: 700; line-height: 1; }
+        .section-title { font-size: 20px; margin-top: 4px; }
+
+        .objective-text { font-size: 28px; font-weight: 300; color: rgba(255,255,255,0.9); line-height: 1.3; }
+        .objective-sub { font-size: 16px; color: var(--text-muted); margin-top: 10px; }
+
+        .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .pillar-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 20px; border-radius: 16px; }
+        .pillar-label { font-size: 10px; color: var(--brand-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; }
+        .pillar-title { font-size: 18px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-weight: 700; }
+        .pillar-content { font-size: 13px; color: var(--text-muted); margin-bottom: 15px; }
+        .pillar-content b { color: var(--text-white); display: block; margin-bottom: 4px; font-size: 10px; text-transform: uppercase; opacity: 0.6; }
+
+        .opp-list { display: flex; flex-direction: column; gap: 10px; }
+        .opp-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 15px 20px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; }
+        .opp-main { display: flex; align-items: center; gap: 20px; }
+        .opp-num { width: 36px; height: 36px; border-radius: 18px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; }
+        .opp-transition { font-size: 18px; font-weight: 500; }
+        .opp-category { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .opp-desc { font-size: 14px; color: var(--text-muted); max-width: 450px; text-align: right; }
+
+        .steps-container { position: relative; padding-left: 40px; }
+        .steps-line { position: absolute; left: 15px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+        .step-item { position: relative; margin-bottom: 20px; }
+        .step-dot { position: absolute; left: -30px; top: 8px; width: 10px; height: 10px; border-radius: 5px; background: var(--brand-blue); box-shadow: 0 0 10px var(--brand-blue); }
+        .step-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .step-desc { font-size: 14px; color: var(--text-muted); }
+
+        .footer { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; opacity: 0.5; font-size: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-row">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="logo-box">XO</div>
+                    <span style="font-size: 12px; font-weight: bold; letter-spacing: 2px; opacity: 0.6;">XO DATA CO.</span>
+                </div>
+                <div class="confidential-tag">Strategic Blueprint: Series D Expansion</div>
+            </div>
+            
+            <h1 class="main-title">
+                The Agentic AI & <br/>
+                <span class="text-gradient">Gig-Economy Ops</span> Blueprint
+            </h1>
+            
+            <div class="meta-grid">
+                <div>
+                    <p class="meta-label">Prepared for</p>
+                    <p class="meta-value">UniUni Logistics</p>
+                </div>
+                <div>
+                    <p class="meta-label">Architect</p>
+                    <p class="meta-value">Bhrigu Aneja</p>
+                </div>
+                <div>
+                    <p class="meta-label">Focus Area</p>
+                    <p class="meta-value">Last-Mile Autonomy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 01. Objective -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <h2 class="section-title">The Objective</h2>
+            </div>
+            <p class="objective-text">
+                Scale from <span style="color: white; font-weight: 500;">200k daily parcels</span> to <span class="text-gradient" style="font-weight: 500; font-style: italic;">Million-Scale Autonomy.</span>
+            </p>
+            <p class="objective-sub">
+                UniUni has mastered the variable-cost gig model. The next leap isn't just more drivers—it's an <span style="color: white;">Autonomous Orchestration Layer</span> that manages 40,000+ personal vehicles as a single, reasoned intelligence.
+            </p>
+        </div>
+
+        <!-- 02. Pillars -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2 class="section-title">Pillars of Transformation</h2>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <p class="pillar-label">Orchestration</p>
+                    <h4 class="pillar-title">Dynamic Fleet Intelligence</h4>
+                    <div class="pillar-content">
+                        <b>The Problem</b>
+                        Static zone-based dispatching creates "empty-mile" waste.
+                    </div>
+                    <div class="pillar-content">
+                        <b>The Solution</b>
+                        Agentic dispatchers that re-negotiate routes in real-time with drivers.
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <p class="pillar-label">The Edge</p>
+                    <h4 class="pillar-title">Robotic Sortation Mesh</h4>
+                    <div class="pillar-content">
+                        <b>The Problem</b>
+                        Warehouse sorting telemetry is siloed from driver-app data.
+                    </div>
+                    <div class="pillar-content">
+                        <b>The Solution</b>
+                        Unified data architecture connecting GRS robots to the driver's seat.
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <p class="pillar-label">Cross-Border</p>
+                    <h4 class="pillar-title">Autonomous Compliance</h4>
+                    <div class="pillar-content">
+                        <b>The Problem</b>
+                        US-to-Canada customs documentation is high-friction manual work.
+                    </div>
+                    <div class="pillar-content">
+                        <b>The Solution</b>
+                        LLM-agents that reason over customs laws to automate data ingestion.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03. Opportunity Map -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <h2 class="section-title">The Opportunity Map</h2>
+            </div>
+            <div class="opp-list">
+                <div class="opp-card">
+                    <div class="opp-main">
+                        <div class="opp-num">1</div>
+                        <div>
+                            <p class="opp-category">Driver Experience (DX)</p>
+                            <p class="opp-transition">Static App Support → <span style="color: var(--brand-blue)">Agentic Driver Assistants</span></p>
+                        </div>
+                    </div>
+                    <p class="opp-desc">LLM-assistants that handle package disputes and navigation troubleshooting for 40k drivers without scaling support staff.</p>
+                </div>
+                <div class="opp-card">
+                    <div class="opp-main">
+                        <div class="opp-num">2</div>
+                        <div>
+                            <p class="opp-category">Operational Visibility</p>
+                            <p class="opp-transition">Reactive Dashboards → <span style="color: var(--brand-blue)">Predictive Delay Reasoning</span></p>
+                        </div>
+                    </div>
+                    <p class="opp-desc">Agents that ingest weather, traffic, and border-wait data to "reason" through alternate routing before delays occur.</p>
+                </div>
+                <div class="opp-card">
+                    <div class="opp-main">
+                        <div class="opp-num">3</div>
+                        <div>
+                            <p class="opp-category">Enterprise Integration</p>
+                            <p class="opp-transition">Manual API Mapping → <span style="color: var(--brand-blue)">MCP Action Layers</span></p>
+                        </div>
+                    </div>
+                    <p class="opp-desc">Using Model Context Protocol to connect Shopify/Temu data directly to UniUni sorting logic with zero code drift.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <h2 class="section-title">Next Steps</h2>
+            </div>
+            <div class="steps-container">
+                <div class="steps-line"></div>
+                <div class="step-item">
+                    <div class="step-dot"></div>
+                    <h4 class="step-title">Series D Growth Audit</h4>
+                    <p class="step-desc">Identifying data bottlenecks in the 2026 U.S. expansion roadmap.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-dot" style="background: rgba(255,255,255,0.2); box-shadow: none;"></div>
+                    <h4 class="step-title">Agentic Fleet POC</h4>
+                    <p class="step-desc">Deploying a reasoning engine for a single high-density sorting hub.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-dot" style="background: rgba(255,255,255,0.2); box-shadow: none;"></div>
+                    <h4 class="step-title">Autonomous Scale-out</h4>
+                    <p class="step-desc">Global rollout across the North American warehouse mesh.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>&copy; 2026 XO DATA CO.</div>
+            <div>Prepared for Peter Lu & the UniUni Team</div>
+        </div>
+    </div>
+
+</body>
+</html>
