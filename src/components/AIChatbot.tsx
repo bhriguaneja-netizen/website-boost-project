@@ -8,7 +8,7 @@ const AIChatbot = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: "Hello! I'm the XO Data Co. AI Specialist. How can I help you today?" }
+    { role: 'assistant', content: "Hello! I'm the XO Data Co. AI Governance Advisor. Ask me anything about migrating from legacy catalogs (Collibra, Alation), hardening RAG retrieval boundaries, or setting up continuous Arize AI eval harnesses." }
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
 

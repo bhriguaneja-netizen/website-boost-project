@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import heroBg from "@/assets/hero-bg-light.jpg";
 
 const stats = [
-  { value: 150, suffix: "+", label: "Projects Delivered" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 50, suffix: "M+", label: "Data Points Processed" },
+  { value: 15, suffix: "ms", prefix: "< ", label: "Runtime Policy Interception" },
+  { value: 100, suffix: "%", prefix: "", label: "Deterministic Chunk Lineage" },
+  { value: 0, suffix: "%", prefix: "", label: "Context Window Data Leakage" },
 ];
 
-const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
+const Counter = ({ target, suffix, prefix = "" }: { target: number; suffix: string; prefix?: string }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -19,8 +19,12 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-          const duration = 2000;
-          const step = target / (duration / 16);
+          if (target === 0) {
+            setCount(0);
+            return;
+          }
+          const duration = 1500;
+          const step = Math.max(1, target / (duration / 16));
           let current = 0;
           const timer = setInterval(() => {
             current += step;
@@ -41,7 +45,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 
   return (
     <span ref={ref} className="stat-number">
-      {count}{suffix}
+      {prefix}{count}{suffix}
     </span>
   );
 };
@@ -82,8 +86,8 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="max-w-3xl">
+      <div className="container mx-auto px-6 relative z-10 pt-28 pb-16">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -91,8 +95,8 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8"
           >
             <span className="w-2 h-2 rounded-full gradient-bg animate-pulse" />
-            <span className="text-sm font-medium text-primary">
-              Data-Driven Transformation
+            <span className="text-xs md:text-sm font-semibold tracking-wider text-primary uppercase">
+              Enterprise Data Governance for AI Readiness
             </span>
           </motion.div>
 
@@ -100,22 +104,28 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.05] mb-8 text-foreground"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] font-serif font-bold leading-[1.08] mb-8 text-foreground tracking-tight"
           >
-            Orchestrating the{" "}
-            <br className="hidden md:block" />
-            Future{" "}
-            <span className="gradient-text">with Data.</span>
+            Your legacy data governance wasn't engineered for{" "}
+            <span className="gradient-text">non-deterministic models.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-lg md:text-xl max-w-xl leading-relaxed mb-10 text-foreground/70 font-medium"
+            className="text-lg md:text-xl max-w-2xl leading-relaxed mb-6 text-foreground/80 font-medium"
           >
-            We empower business and social leaders to navigate their most complex 
-            challenges and seize high-impact opportunities through data-driven precision.
+            XO Data Co. transforms brittle enterprise data estates into model-ready context architectures. We enforce deterministic guardrails, zero-leakage RAG pipelines, and auditable action lineage across every agentic workflow, vector store, and fine-tuning run.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-mono mb-10"
+          >
+            Migrating Fortune 500 data teams from Collibra, Alation & static catalogs to production GenAI
           </motion.p>
 
           <motion.div
@@ -128,15 +138,15 @@ const Hero = () => {
               href="https://calendly.com/xodataco"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-primary-foreground font-semibold text-base hover:opacity-90 transition-all duration-300 hero-glow"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-primary-foreground font-semibold text-base hover:opacity-90 transition-all duration-300 hero-glow shadow-lg"
             >
-              Book Strategy Call <ArrowRight size={18} />
+              Book an Architecture Review <ArrowRight size={18} />
             </a>
             <a
-              href="#contact"
+              href="/services"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base border border-border text-foreground transition-all duration-300 hover:bg-secondary"
             >
-              Message Us
+              Explore the Playbook
             </a>
           </motion.div>
         </div>
@@ -145,13 +155,13 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-border max-w-3xl"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-border max-w-3xl p-6 rounded-2xl border border-border/60 bg-background/60 backdrop-blur-md"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center md:px-8">
-              <Counter target={stat.value} suffix={stat.suffix} />
-              <p className="mt-2 text-sm font-medium text-muted-foreground">
+              <Counter target={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
+              <p className="mt-2 text-xs md:text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                 {stat.label}
               </p>
             </div>

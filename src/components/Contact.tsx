@@ -55,13 +55,25 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">Get In Touch</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mt-4 text-balance">
-              Let's Create Value Together
+            <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-widest font-mono">
+              Initiate Engagement
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-foreground mt-4 text-balance">
+              Stop treating AI governance like a legal checklist. Build it as core infrastructure.
             </h2>
-            <p className="text-muted-foreground text-lg mt-4 max-w-lg mx-auto">
-              Ready to unlock the power of your data? Start a conversation with our team.
+            <p className="text-muted-foreground text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              Connect directly with an AI Governance Principal to review your RAG pipelines, vector architectures, and continuous evaluation protocols.
             </p>
+            <div className="mt-6">
+              <a
+                href="https://calendly.com/xodataco"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl gradient-bg text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity shadow-md"
+              >
+                Instant Booking: 45-Min Technical Review →
+              </a>
+            </div>
           </motion.div>
 
           {!submitted ? (

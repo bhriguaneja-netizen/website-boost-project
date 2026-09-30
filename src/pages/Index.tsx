@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
+import Services from "@/components/Services";
+import TechStack from "@/components/TechStack";
+import PlatformPreview from "@/components/PlatformPreview";
 import Insights from "@/components/Insights";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -12,8 +14,10 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
-      <Services />
       <HowItWorks />
+      <Services />
+      <TechStack />
+      <PlatformPreview />
       <Insights />
       <Contact />
       <Footer />
